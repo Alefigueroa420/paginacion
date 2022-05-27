@@ -1,0 +1,31 @@
+<h1>Posteos</h1>
+
+
+<table>
+<tr>
+<th>title</th>
+<th>content</th>
+<th>author</th>
+<tr>
+
+<% @posts.each do |post| %>
+<tr>
+<td><%= post.title %></td>
+<td><%= post.content %></td>
+<td><%= post.author %></td>
+<tr>
+
+</table>
+
+</div>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>
